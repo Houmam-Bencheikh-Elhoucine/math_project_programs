@@ -1,0 +1,166 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Themes/Neon-ish-Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Textures/bg.jpg" type="Texture" id=2]
+[ext_resource path="res://Scripts/MainScene.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="MainScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color( 0, 0.0431373, 0.188235, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.2
+anchor_top = 0.05
+anchor_right = 0.8
+anchor_bottom = 0.2
+theme = ExtResource( 1 )
+text = "Cryptanalysis app"
+align = 1
+valign = 1
+
+[node name="Input" type="Control" parent="."]
+visible = false
+anchor_left = 0.2
+anchor_top = 0.3
+anchor_right = 0.8
+anchor_bottom = 0.8
+
+[node name="Label" type="Label" parent="Input"]
+anchor_left = 0.2
+anchor_top = -0.05
+anchor_right = 0.8
+anchor_bottom = 0.05
+theme = ExtResource( 1 )
+text = "Encrypted Message"
+align = 1
+valign = 1
+
+[node name="ProbableWord" type="LineEdit" parent="Input"]
+anchor_left = 0.2
+anchor_top = 0.8
+anchor_right = 0.8
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+align = 1
+placeholder_text = "Probable word"
+
+[node name="Text" type="TextEdit" parent="Input"]
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.75
+theme = ExtResource( 1 )
+highlight_current_line = true
+hiding_enabled = true
+wrap_enabled = true
+
+[node name="ResultContainer" type="Control" parent="."]
+anchor_left = 0.2
+anchor_top = 0.3
+anchor_right = 0.8
+anchor_bottom = 0.8
+
+[node name="Key" type="Label" parent="ResultContainer"]
+anchor_left = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.1
+theme = ExtResource( 1 )
+text = "KEY"
+align = 1
+valign = 1
+
+[node name="KeyEdit" type="LineEdit" parent="ResultContainer"]
+visible = false
+anchor_left = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.1
+theme = ExtResource( 1 )
+align = 1
+placeholder_text = "Enter custom key"
+
+[node name="Position" type="Label" parent="ResultContainer"]
+anchor_right = 0.1
+anchor_bottom = 0.1
+theme = ExtResource( 1 )
+align = 1
+valign = 1
+
+[node name="Text" type="TextEdit" parent="ResultContainer"]
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+readonly = true
+hiding_enabled = true
+wrap_enabled = true
+
+[node name="Change" type="Button" parent="ResultContainer"]
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.1
+theme = ExtResource( 1 )
+toggle_mode = true
+text = "change"
+
+[node name="Start" type="Button" parent="."]
+anchor_left = 0.4
+anchor_top = 0.85
+anchor_right = 0.6
+anchor_bottom = 0.9
+theme = ExtResource( 1 )
+shortcut_in_tooltip = false
+text = "Start"
+
+[node name="Reset" type="Button" parent="."]
+visible = false
+anchor_left = 0.4
+anchor_top = 0.85
+anchor_right = 0.6
+anchor_bottom = 0.9
+theme = ExtResource( 1 )
+shortcut_in_tooltip = false
+text = "Reset"
+
+[node name="ErrorMessage" type="Label" parent="."]
+anchor_left = 0.1
+anchor_top = 0.9
+anchor_right = 0.9
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_styles/normal = SubResource( 1 )
+align = 1
+valign = 1
+
+[node name="NextPosition" type="Button" parent="."]
+visible = false
+anchor_left = 0.65
+anchor_top = 0.85
+anchor_right = 0.75
+anchor_bottom = 0.9
+theme = ExtResource( 1 )
+text = "Next"
+
+[node name="PrevPosition" type="Button" parent="."]
+visible = false
+anchor_left = 0.25
+anchor_top = 0.85
+anchor_right = 0.35
+anchor_bottom = 0.9
+theme = ExtResource( 1 )
+text = "Previous"
+
+[connection signal="toggled" from="ResultContainer/Change" to="." method="_on_Button_toggled"]
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_Reset_pressed"]
+[connection signal="pressed" from="NextPosition" to="." method="_on_NextPosition_pressed"]
+[connection signal="pressed" from="PrevPosition" to="." method="_on_PrevPosition_pressed"]

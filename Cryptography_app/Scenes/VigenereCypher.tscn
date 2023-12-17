@@ -1,0 +1,197 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Textures/bg.jpg" type="Texture" id=1]
+[ext_resource path="res://Assets/Themes/Neon-ish-Theme.tres" type="Theme" id=2]
+[ext_resource path="res://Scripts/VigenereCypher/MainScene.gd" type="Script" id=3]
+
+[node name="VigenereCypher" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color( 0, 0.0805, 0.23, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.3
+anchor_top = 0.1
+anchor_right = 0.7
+anchor_bottom = 0.2
+mouse_filter = 1
+theme = ExtResource( 2 )
+text = "Vigenere Cypher"
+align = 1
+valign = 1
+
+[node name="Encrypt" type="Control" parent="."]
+visible = false
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PlainText" type="LineEdit" parent="Encrypt"]
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.3
+margin_right = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource( 2 )
+align = 1
+max_length = 128
+placeholder_text = "ENter plain text here"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="EncryptedText" type="Label" parent="Encrypt"]
+anchor_left = 0.3
+anchor_top = 0.7
+anchor_right = 0.7
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource( 2 )
+text = "RESULT"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+max_lines_visible = 5
+
+[node name="EncryptButton" type="Button" parent="Encrypt"]
+anchor_left = 0.4
+anchor_top = 0.55
+anchor_right = 0.6
+anchor_bottom = 0.6
+theme = ExtResource( 2 )
+text = "Encrypt"
+
+[node name="Decrypt" type="Control" parent="."]
+visible = false
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="EncryptedText" type="LineEdit" parent="Decrypt"]
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.3
+theme = ExtResource( 2 )
+align = 1
+placeholder_text = "Enter encrypted text here"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="PlainText" type="Label" parent="Decrypt"]
+anchor_left = 0.3
+anchor_top = 0.7
+anchor_right = 0.7
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource( 2 )
+text = "RESULT"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+max_lines_visible = 5
+
+[node name="DecryptButton" type="Button" parent="Decrypt"]
+anchor_left = 0.4
+anchor_top = 0.55
+anchor_right = 0.6
+anchor_bottom = 0.6
+theme = ExtResource( 2 )
+text = "Decrypt"
+
+[node name="Key" type="LineEdit" parent="."]
+visible = false
+anchor_left = 0.4
+anchor_top = 0.437
+anchor_right = 0.6
+anchor_bottom = 0.537
+theme = ExtResource( 2 )
+align = 1
+placeholder_text = "KEY"
+
+[node name="Switch" type="Button" parent="."]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.15
+anchor_bottom = 0.15
+theme = ExtResource( 2 )
+toggle_mode = true
+text = "Encrypt"
+
+[node name="HelpButton" type="Button" parent="."]
+anchor_left = 0.75
+anchor_top = 0.05
+anchor_right = 0.85
+anchor_bottom = 0.15
+theme = ExtResource( 2 )
+text = "?"
+
+[node name="QuitButton" type="Button" parent="."]
+anchor_left = 0.85
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.15
+theme = ExtResource( 2 )
+text = "X"
+
+[node name="Help" type="Control" parent="."]
+anchor_left = 0.1
+anchor_top = 0.25
+anchor_right = 0.9
+anchor_bottom = 0.9
+
+[node name="Close" type="Button" parent="Help"]
+anchor_left = 0.4
+anchor_top = 0.9
+anchor_right = 0.6
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+text = "close"
+
+[node name="Label" type="Label" parent="Help"]
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.8
+theme = ExtResource( 2 )
+text = "Another extention of the cesar's cypher is the vigenere cypher as it uses an array of values as a key
+encrypting is similar to the cesar's procedure, but for each caracter we pick the corresponding value of the key according to its position in the plain message.
+
+example: let's encrypt the message \"cryptography is an interesting subject\" using the vigenere procedure with the key \"crypto\"
+first we take the key \"crypto\" and repeat it many times to cover the plain message (of 34 characters)
+so we get the key: cryptocryptocryptocryptocryptocryptocrypt
+and then we encrypt the first character \"c\" by shifting with \"c\" positions (2 positions) and we get e
+we encrypt the second character \"r\" by shifting with \"R\" positions (17 positions) and we get i (we wrap the letters if we go beyond 26)
+and so on 
+at the end the encrypted message will be: eiwemciiyeam kj yc bbvvptlhkee hnplvai
+
+to decrypt we do the same as encrypting but instead of shifting positively (adding values) we shift negatively (substract values)"
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="gui_input" from="Encrypt/EncryptedText" to="." method="_on_copy_text"]
+[connection signal="pressed" from="Encrypt/EncryptButton" to="." method="_on_Encrypt_started"]
+[connection signal="gui_input" from="Decrypt/PlainText" to="." method="_on_copy_text"]
+[connection signal="pressed" from="Decrypt/DecryptButton" to="." method="_on_Decrypt_started"]
+[connection signal="focus_exited" from="Key" to="." method="change_key"]
+[connection signal="toggled" from="Switch" to="." method="_on_Switch_toggled"]
+[connection signal="pressed" from="HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="Help/Close" to="." method="_on_Close_pressed"]

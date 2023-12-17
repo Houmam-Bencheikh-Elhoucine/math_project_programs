@@ -1,0 +1,247 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/CesarCypher/MainScene.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/bg.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Themes/Neon-ish-Theme.tres" type="Theme" id=5]
+
+[node name="CesarCypher" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color( 0, 0.0823529, 0.231373, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.3
+anchor_top = 0.1
+anchor_right = 0.7
+anchor_bottom = 0.2
+theme = ExtResource( 5 )
+text = "Cesar Cypher"
+align = 1
+valign = 1
+
+[node name="Encrypt" type="Control" parent="."]
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PlainText" type="LineEdit" parent="Encrypt"]
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.3
+margin_right = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource( 5 )
+align = 1
+max_length = 256
+placeholder_text = "Enter plain text here"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="EncryptedText" type="Label" parent="Encrypt"]
+anchor_left = 0.3
+anchor_top = 0.7
+anchor_right = 0.7
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource( 5 )
+text = "RESULT"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+max_lines_visible = 8
+
+[node name="KeyConainer" type="Control" parent="Encrypt"]
+anchor_left = 0.4
+anchor_top = 0.4
+anchor_right = 0.6
+anchor_bottom = 0.5
+
+[node name="LabelKey" type="Label" parent="Encrypt/KeyConainer"]
+anchor_right = 0.5
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "KEY: 0"
+align = 1
+valign = 1
+
+[node name="INC" type="Button" parent="Encrypt/KeyConainer"]
+anchor_left = 0.5
+anchor_right = 0.75
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "+"
+
+[node name="DEC" type="Button" parent="Encrypt/KeyConainer"]
+anchor_left = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "-"
+
+[node name="EncryptButton" type="Button" parent="Encrypt"]
+anchor_left = 0.4
+anchor_top = 0.55
+anchor_right = 0.6
+anchor_bottom = 0.6
+theme = ExtResource( 5 )
+text = "Encrypt"
+
+[node name="Decrypt" type="Control" parent="."]
+visible = false
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="EncryptedText" type="LineEdit" parent="Decrypt"]
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.3
+theme = ExtResource( 5 )
+align = 1
+placeholder_text = "Enter encrypted text here"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="PlainText" type="Label" parent="Decrypt"]
+anchor_left = 0.3
+anchor_top = 0.7
+anchor_right = 0.7
+anchor_bottom = 0.85
+mouse_filter = 1
+theme = ExtResource( 5 )
+text = "RESULT"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="KeyConainer" type="Control" parent="Decrypt"]
+anchor_left = 0.4
+anchor_top = 0.4
+anchor_right = 0.6
+anchor_bottom = 0.5
+theme = ExtResource( 5 )
+
+[node name="LabelKey" type="Label" parent="Decrypt/KeyConainer"]
+anchor_right = 0.5
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "KEY"
+align = 1
+valign = 1
+
+[node name="INC" type="Button" parent="Decrypt/KeyConainer"]
+anchor_left = 0.5
+anchor_right = 0.75
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "+"
+
+[node name="DEC" type="Button" parent="Decrypt/KeyConainer"]
+anchor_left = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "-"
+
+[node name="DecryptButton" type="Button" parent="Decrypt"]
+anchor_left = 0.4
+anchor_top = 0.55
+anchor_right = 0.6
+anchor_bottom = 0.6
+theme = ExtResource( 5 )
+text = "Decrypt"
+
+[node name="Switch" type="Button" parent="."]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.15
+anchor_bottom = 0.15
+theme = ExtResource( 5 )
+toggle_mode = true
+text = "Encrypt"
+
+[node name="HelpButton" type="Button" parent="."]
+anchor_left = 0.75
+anchor_top = 0.05
+anchor_right = 0.85
+anchor_bottom = 0.15
+theme = ExtResource( 5 )
+text = "?"
+
+[node name="QuitButton" type="Button" parent="."]
+anchor_left = 0.85
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.15
+theme = ExtResource( 5 )
+text = "X"
+
+[node name="Help" type="Control" parent="."]
+visible = false
+anchor_left = 0.1
+anchor_top = 0.25
+anchor_right = 0.9
+anchor_bottom = 0.9
+
+[node name="GeneralInfo" type="Label" parent="Help"]
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_vertical = 2
+theme = ExtResource( 5 )
+text = "The Cezar's Cipher is one of the earliest encryption methods used for military purposes, 
+
+it works by shifting each ketter by a certain number of positions (knows as the encryption key) and wrapping the letters when reaching the letter (z)
+example: encrypting a message with the Cesar's cypher with key=3
+we shift the letter \"a\" by 3 positions and we get \"d\", \"b\" becomes \"e\", \"c\" becomes \"f\" andd so on till we reach \"x\" which becomes \"a\", \"y\" becomes \"b\" and \"z\" becomes \"c\".
+if we want to represent it mathematically, we can express it as follows: 
+e(m) = m + k (mod n)
+such as:
+e: the encryption function
+m: the plain text
+k: the key
+n: the nulber of letters (in english n=26)
+the addition represents shifting the character
+and the modulo for wrapping the letters.
+for decryption we just substract the key
+d(c) = c - k (mod n)"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Close" type="Button" parent="Help"]
+anchor_left = 0.4
+anchor_top = 0.9
+anchor_right = 0.6
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "Close"
+
+[connection signal="gui_input" from="Encrypt/EncryptedText" to="." method="_on_copy_text"]
+[connection signal="pressed" from="Encrypt/KeyConainer/INC" to="." method="_on_INC_pressed"]
+[connection signal="pressed" from="Encrypt/KeyConainer/DEC" to="." method="_on_DEC_pressed"]
+[connection signal="pressed" from="Encrypt/EncryptButton" to="." method="_on_Encrypt_started"]
+[connection signal="gui_input" from="Decrypt/PlainText" to="." method="_on_copy_text"]
+[connection signal="pressed" from="Decrypt/KeyConainer/INC" to="." method="_on_INC_pressed"]
+[connection signal="pressed" from="Decrypt/KeyConainer/DEC" to="." method="_on_DEC_pressed"]
+[connection signal="pressed" from="Decrypt/DecryptButton" to="." method="_on_Decrypt_started"]
+[connection signal="toggled" from="Switch" to="." method="_on_Switch_toggled"]
+[connection signal="pressed" from="HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="Help/Close" to="." method="_on_Close_pressed"]

@@ -1,0 +1,294 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/AffineCypher/MainScene.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/bg.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Themes/Neon-ish-Theme.tres" type="Theme" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="AffineCypher" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color( 0, 0.0805, 0.23, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.3
+anchor_top = 0.1
+anchor_right = 0.7
+anchor_bottom = 0.2
+theme = ExtResource( 5 )
+text = "Affine Cypher"
+align = 1
+valign = 1
+
+[node name="Encrypt" type="Control" parent="."]
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PlainText" type="LineEdit" parent="Encrypt"]
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.3
+margin_right = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource( 5 )
+align = 1
+max_length = 128
+placeholder_text = "ENter plain text here"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="EncryptedText" type="Label" parent="Encrypt"]
+anchor_left = 0.3
+anchor_top = 0.7
+anchor_right = 0.7
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource( 5 )
+text = "RESULT"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+max_lines_visible = 5
+
+[node name="EncryptButton" type="Button" parent="Encrypt"]
+anchor_left = 0.4
+anchor_top = 0.55
+anchor_right = 0.6
+anchor_bottom = 0.6
+theme = ExtResource( 5 )
+text = "Encrypt"
+
+[node name="Key" type="Button" parent="Encrypt"]
+anchor_left = 0.45
+anchor_top = 0.375
+anchor_right = 0.55
+anchor_bottom = 0.475
+theme = ExtResource( 5 )
+text = "KEY"
+
+[node name="Decrypt" type="Control" parent="."]
+visible = false
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="EncryptedText" type="LineEdit" parent="Decrypt"]
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.3
+theme = ExtResource( 5 )
+align = 1
+placeholder_text = "Enter encrypted text here"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="PlainText" type="Label" parent="Decrypt"]
+anchor_left = 0.3
+anchor_top = 0.7
+anchor_right = 0.7
+anchor_bottom = 0.85
+theme = ExtResource( 5 )
+text = "RESULT"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Key" type="Button" parent="Decrypt"]
+anchor_left = 0.45
+anchor_top = 0.375
+anchor_right = 0.55
+anchor_bottom = 0.475
+theme = ExtResource( 5 )
+text = "KEY"
+
+[node name="DecryptButton" type="Button" parent="Decrypt"]
+anchor_left = 0.4
+anchor_top = 0.55
+anchor_right = 0.6
+anchor_bottom = 0.6
+theme = ExtResource( 5 )
+text = "Decrypt"
+
+[node name="Switch" type="Button" parent="."]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.15
+anchor_bottom = 0.15
+theme = ExtResource( 5 )
+toggle_mode = true
+text = "Encrypt"
+
+[node name="HelpButton" type="Button" parent="."]
+anchor_left = 0.75
+anchor_top = 0.05
+anchor_right = 0.85
+anchor_bottom = 0.15
+theme = ExtResource( 5 )
+text = "?"
+
+[node name="QuitButton" type="Button" parent="."]
+anchor_left = 0.85
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.15
+theme = ExtResource( 5 )
+text = "X"
+
+[node name="KeyConainer" type="Control" parent="."]
+visible = false
+anchor_left = 0.3
+anchor_top = 0.35
+anchor_right = 0.7
+anchor_bottom = 0.9
+rect_clip_content = true
+
+[node name="A" type="Control" parent="KeyConainer"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.3
+
+[node name="LabelKeyA" type="Label" parent="KeyConainer/A"]
+anchor_right = 0.5
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "A: 1"
+align = 1
+valign = 1
+
+[node name="INCA" type="Button" parent="KeyConainer/A"]
+anchor_left = 0.5
+anchor_right = 0.75
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "+"
+
+[node name="DECA" type="Button" parent="KeyConainer/A"]
+anchor_left = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "-"
+
+[node name="B" type="Control" parent="KeyConainer"]
+anchor_left = 0.1
+anchor_top = 0.4
+anchor_right = 0.9
+anchor_bottom = 0.6
+margin_left = 0.199997
+margin_right = -0.200012
+
+[node name="LabelKeyB" type="Label" parent="KeyConainer/B"]
+anchor_right = 0.5
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "B: 0"
+align = 1
+valign = 1
+
+[node name="INCB" type="Button" parent="KeyConainer/B"]
+anchor_left = 0.5
+anchor_right = 0.75
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "+"
+
+[node name="DECB" type="Button" parent="KeyConainer/B"]
+anchor_left = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "-"
+
+[node name="Button" type="Button" parent="KeyConainer"]
+anchor_left = 0.35
+anchor_top = 0.7
+anchor_right = 0.65
+anchor_bottom = 0.8
+theme = ExtResource( 5 )
+text = "Apply"
+
+[node name="Error" type="Label" parent="KeyConainer"]
+visible = false
+anchor_top = 0.85
+anchor_right = 1.0
+anchor_bottom = 0.95
+grow_horizontal = 2
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_styles/normal = SubResource( 1 )
+text = "Invalid value for a, it must satisfy the property gcd(a, 26)=1"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Help" type="Control" parent="."]
+visible = false
+anchor_left = 0.1
+anchor_top = 0.25
+anchor_right = 0.9
+anchor_bottom = 0.9
+
+[node name="Label" type="Label" parent="Help"]
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.8
+theme = ExtResource( 5 )
+text = "Affine cypher is an extention of the cesar's cypher that, instead of only shifting the character by a certain key 
+it passes the plain text to a linear function (x|->a*x+b) where (a, b) is the key
+so to encrypt a message m we have
+e(m) = (a*m+b) mod n
+where a, b define the key
+n is the number of characters in the alphabet
+to decrypt the number we have
+d(c) = (c-b) * a' mod n
+where a' is the inverse of the coefficient a in the key
+for that choosing the coeficient a is restricted to being 
+relatively prime with the number of characters in the alphabet
+i.e: gcd(a, n) = 1
+"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Close" type="Button" parent="Help"]
+anchor_left = 0.4
+anchor_top = 0.9
+anchor_right = 0.6
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+text = "close"
+
+[connection signal="gui_input" from="Encrypt/EncryptedText" to="." method="_on_copy_text"]
+[connection signal="pressed" from="Encrypt/EncryptButton" to="." method="update_encrypted_text"]
+[connection signal="pressed" from="Encrypt/Key" to="." method="change_key"]
+[connection signal="gui_input" from="Decrypt/PlainText" to="." method="_on_copy_text"]
+[connection signal="pressed" from="Decrypt/Key" to="." method="change_key"]
+[connection signal="pressed" from="Decrypt/DecryptButton" to="." method="update_decrypted_text"]
+[connection signal="toggled" from="Switch" to="." method="_on_Switch_toggled"]
+[connection signal="pressed" from="HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="KeyConainer/A/INCA" to="." method="_on_INCA_pressed"]
+[connection signal="pressed" from="KeyConainer/A/DECA" to="." method="_on_DECA_pressed"]
+[connection signal="pressed" from="KeyConainer/B/INCB" to="." method="_on_INCB_pressed"]
+[connection signal="pressed" from="KeyConainer/B/DECB" to="." method="_on_DECB_pressed"]
+[connection signal="pressed" from="KeyConainer/Button" to="." method="apply_key"]
+[connection signal="pressed" from="Help/Close" to="." method="_on_Close_pressed"]

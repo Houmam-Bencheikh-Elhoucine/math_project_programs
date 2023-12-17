@@ -1,0 +1,154 @@
+[gd_resource type="Theme" load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Fonts/batmfa__.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0.458824, 0.768627, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0.0791667, 0.25, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+corner_detail = 1
+shadow_color = Color( 0, 0, 0, 0 )
+anti_aliasing_size = 1.0
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0.192157, 0.4, 0.156863 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0.243137, 0.768627, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+corner_detail = 1
+shadow_color = Color( 0, 0, 0, 0 )
+anti_aliasing_size = 1.0
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0.458824, 0.768627, 0.0392157 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0.403922, 0.768627, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+corner_detail = 1
+anti_aliasing_size = 1.0
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0.458824, 0.768627, 0.0392157 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.270588, 0.85098, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+corner_detail = 1
+anti_aliasing_size = 1.0
+
+[sub_resource type="DynamicFontData" id=5]
+override_oversampling = 10.0
+font_path = "res://Assets/Fonts/batmfa__.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+outline_color = Color( 0, 0.243137, 0.768627, 1 )
+use_mipmaps = true
+font_data = SubResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0.243137, 0.768627, 1 )
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+corner_detail = 1
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0, 0.36, 0.6, 0.235294 )
+border_color = Color( 0, 0.403922, 0.768627, 1 )
+corner_detail = 1
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+anti_aliasing_size = 1.0
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0, 0.18, 0.3, 0.235294 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0.403922, 0.768627, 1 )
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+anti_aliasing_size = 1.0
+
+[resource]
+Button/colors/font_color = Color( 0, 0.458824, 0.768627, 1 )
+Button/colors/font_color_disabled = Color( 0, 0.156, 0.26, 1 )
+Button/colors/font_color_focus = Color( 0, 0.6, 1, 1 )
+Button/colors/font_color_hover = Color( 0, 0.6, 1, 1 )
+Button/colors/font_color_pressed = Color( 0, 0.6, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 7 )
+Button/styles/disabled = SubResource( 9 )
+Button/styles/focus = SubResource( 1 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 1 )
+Button/styles/pressed = SubResource( 3 )
+Label/colors/font_color = Color( 0, 0.458824, 0.768627, 1 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 0 )
+Label/fonts/font = SubResource( 6 )
+Label/styles/normal = SubResource( 4 )
+LineEdit/colors/clear_button_color = Color( 0, 0.458824, 0.768627, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 0, 0.458824, 0.768627, 1 )
+LineEdit/colors/cursor_color = Color( 0, 0.6, 1, 1 )
+LineEdit/colors/font_color = Color( 0, 0.458824, 0.768627, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0.643137, 0.701961, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0, 0.458824, 0.768627, 1 )
+LineEdit/colors/selection_color = Color( 0, 0.683333, 1, 1 )
+LineEdit/fonts/font = SubResource( 8 )
+LineEdit/styles/focus = SubResource( 1 )
+LineEdit/styles/normal = SubResource( 1 )
+LineEdit/styles/read_only = SubResource( 1 )
+PopupMenu/colors/font_color = Color( 0, 0.458824, 0.768627, 1 )
+PopupMenu/colors/font_color_accel = Color( 0, 0.458824, 0.768627, 1 )
+PopupMenu/colors/font_color_disabled = Color( 0, 0.6, 1, 0.470588 )
+PopupMenu/colors/font_color_hover = Color( 0, 0.6, 1, 1 )
+PopupMenu/colors/font_color_separator = Color( 0, 0.6545, 0.77, 1 )
+PopupMenu/constants/hseparation = 10
+PopupMenu/constants/vseparation = 10
+PopupMenu/fonts/font = SubResource( 14 )
+PopupMenu/styles/hover = SubResource( 15 )
+PopupMenu/styles/labeled_separator_left = SubResource( 16 )
+PopupMenu/styles/labeled_separator_right = SubResource( 16 )
+PopupMenu/styles/panel = SubResource( 16 )
+PopupMenu/styles/panel_disabled = SubResource( 16 )
+PopupMenu/styles/separator = SubResource( 16 )
+TextEdit/colors/background_color = Color( 0.133333, 0.152941, 0.211765, 1 )
+TextEdit/fonts/font = SubResource( 8 )
+TextEdit/styles/completion = SubResource( 1 )
+TextEdit/styles/focus = SubResource( 1 )
+TextEdit/styles/normal = SubResource( 1 )
+TextEdit/styles/read_only = SubResource( 1 )
