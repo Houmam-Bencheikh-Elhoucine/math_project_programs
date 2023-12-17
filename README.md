@@ -1,15 +1,23 @@
 # Math Project Programs
 
-Project realised by: 
-BENCHEIKH LEHOCINE Hamame
-BOULOUFA Mellissa
-TOMASI Albert
+#### Project realised by: 
+- BENCHEIKH LEHOCINE Hamame
+- BOULOUFA Mellissa
+- TOMASI Albert
 
-Module teachers:
-DUCHI Enrica
-Enrica Duchi
-Roman Kniazev
-Sophie Laplante
-Sylvain Perifel
+#### Module teachers:
+- Enrica Duchi
+- Roman Kniazev
+- Sophie Laplante
+- Sylvain Perifel
 
-Project subject: Cryptanalysis of classical cryptography
+#### Project subject: 
+Cryptanalysis of classical cryptography
+
+##### Apps developed: 
+- ##### Cryptogrpahy app: 
+an app for encrypting messages using classical cryptography methods (Cezar, Affine, Vigenere)
+- ##### Cryptanalysis app:
+an app for breaking Vigenere encryption based on a probable word
+
+Apps made using the Godot game engine (version 3.5)
